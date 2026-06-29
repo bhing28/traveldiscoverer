@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TravelDiscoverer | Flights, Hotels, Tours & Travel Services</title><meta name="description" content="TravelDiscoverer helps travelers compare flights, hotels, tours, travel insurance, visa services, airport transfers, and more."><link rel="stylesheet" href="assets/styles.css"><script defer src="assets/app.js"></script></head><body><header class="topbar"><nav class="nav"><a class="brand" href="index.html">Travel<span>Discoverer</span></a><div class="navlinks"><a href="flights.html">Flights</a><a href="hotels.html">Hotels</a><a href="destinations/manila.html">Destinations</a><a href="services/insurance.html">Insurance</a><a href="contact.html" class="cta">Inquiry</a></div></nav></header><main><section class="hero"><div class="hero-inner"><div><span class="eyebrow">✈ Explore smarter travel deals</span><h1>Discover flights, stays, tours, and travel help in one place.</h1><p>Built for TravelDiscoverer.com using your travel assets: a modern landing-page style, destination pages, affiliate-ready service pages, and a corrected flight search flow.</p><form class="search-card" onsubmit="searchTravel(event)">
+  <div class="tabs">
+    <button class="tab active" type="button">Flights</button>
+    <button class="tab" type="button">Hotels</button>
+    <button class="tab" type="button">Tours</button>
+    <button class="tab" type="button">Cars</button>
+  </div>
+
+  <div class="trip-options" aria-label="Flight type">
+    <label class="trip-option active">
+      <input type="radio" name="tripType" value="roundtrip" checked onchange="toggleTripType()">
+      Round trip
+    </label>
+    <label class="trip-option">
+      <input type="radio" name="tripType" value="oneway" onchange="toggleTripType()">
+      One-way
+    </label>
+    <label class="trip-option">
+      <input type="radio" name="tripType" value="multicity" onchange="toggleTripType()">
+      Multi-city
+    </label>
+  </div>
+
+  <div class="form-grid" id="standardFlightFields">
+    <div class="field"><label>From</label><input name="from" value="Los Angeles" placeholder="City or airport"></div>
+    <div class="field"><label>To</label><input name="to" value="Manila" placeholder="City or airport"></div>
+    <div class="field"><label>Departure</label><input name="depart" type="date"></div>
+    <div class="field" id="returnField"><label>Return</label><input name="return" type="date"></div>
+    <div class="field"><label>Passengers</label><select name="passengers"><option>1 Adult</option><option>2 Adults</option><option>Family</option></select></div>
+    <div class="field"><label>Cabin</label><select name="cabin"><option>Economy</option><option>Premium Economy</option><option>Business</option><option>First Class</option></select></div>
+  </div>
+
+  <div class="multicity-fields hidden" id="multiCityFields">
+    <div class="multi-city-title">Multi-city itinerary</div>
+    <div class="multi-leg">
+      <div class="field"><label>Trip 1 From</label><input name="mcFrom1" value="Los Angeles" placeholder="City or airport"></div>
+      <div class="field"><label>Trip 1 To</label><input name="mcTo1" value="Manila" placeholder="City or airport"></div>
+      <div class="field"><label>Trip 1 Date</label><input name="mcDate1" type="date"></div>
+    </div>
+    <div class="multi-leg">
+      <div class="field"><label>Trip 2 From</label><input name="mcFrom2" value="Manila" placeholder="City or airport"></div>
+      <div class="field"><label>Trip 2 To</label><input name="mcTo2" value="Tokyo" placeholder="City or airport"></div>
+      <div class="field"><label>Trip 2 Date</label><input name="mcDate2" type="date"></div>
+    </div>
+    <div class="multi-leg">
+      <div class="field"><label>Trip 3 From</label><input name="mcFrom3" value="Tokyo" placeholder="City or airport"></div>
+      <div class="field"><label>Trip 3 To</label><input name="mcTo3" value="Los Angeles" placeholder="City or airport"></div>
+      <div class="field"><label>Trip 3 Date</label><input name="mcDate3" type="date"></div>
+    </div>
+    <div class="form-grid compact-grid">
+      <div class="field"><label>Passengers</label><select name="mcPassengers"><option>1 Adult</option><option>2 Adults</option><option>Family</option></select></div>
+      <div class="field"><label>Cabin</label><select name="mcCabin"><option>Economy</option><option>Premium Economy</option><option>Business</option><option>First Class</option></select></div>
+    </div>
+  </div>
+
+  <button class="search-btn">Search Flights</button>
+</form></div><div class="hero-card"><div class="photo-stack"><div class="photo">🏝️</div><div class="photo">✈️</div><div class="photo">🏨</div><div class="photo">🧳</div></div><h3>TravelDiscovery-ready design</h3><p>Inspired by your LandingKit 081 travel layout and built as a ready-to-upload static site.</p></div></div></section><section class="section"><h2>Everything your travel site needs</h2><p class="lead">Start as a low-cost static website on GitHub + Cloudflare, then move to WordPress/Hostinger later if you want Elementor, AIOSEO, and dynamic booking plugins.</p><div class="grid"><a class="card" href="flights.html"><div class="icon">✈️</div><h3>Flights</h3><p>Correct destination code mapping, including Manila as MNL, with sample airline choices.</p></a><a class="card" href="hotels.html"><div class="icon">🏨</div><h3>Hotels</h3><p>Hotel inquiry layout for affiliate links or future booking integrations.</p></a><a class="card" href="services/visa.html"><div class="icon">🛂</div><h3>Visa Services</h3><p>Ready page for VisaHQ or other visa-assistance affiliate programs.</p></a><a class="card" href="services/insurance.html"><div class="icon">🛡️</div><h3>Travel Insurance</h3><p>Travel insurance offer page for Insubuy or other providers.</p></a><a class="card" href="services/transfers.html"><div class="icon">🚕</div><h3>Airport Transfers</h3><p>Kiwitaxi-style airport transfer service page.</p></a><a class="card" href="services/claims.html"><div class="icon">💵</div><h3>Flight Compensation</h3><p>Compensair-style page for delayed or canceled flight claims.</p></a></div></section><section class="section"><div class="split"><div class="panel"><h2>Featured destinations</h2><p class="lead">Create SEO pages around airport codes and popular routes.</p><div class="features"><a class="feature" href="destinations/manila.html"><span class="check">✓</span><span>Manila, Philippines — MNL</span></a><a class="feature" href="destinations/cebu.html"><span class="check">✓</span><span>Cebu, Philippines — CEB</span></a><a class="feature" href="destinations/tokyo.html"><span class="check">✓</span><span>Tokyo, Japan — NRT/HND</span></a><a class="feature" href="destinations/seoul.html"><span class="check">✓</span><span>Seoul, South Korea — ICN</span></a></div></div><div class="panel"><h2>Affiliate-ready</h2><p class="lead">Use your own affiliate IDs later. Buttons are placeholders so you can replace links after approval.</p><p><a class="btn" href="contact.html">Request Travel Quote</a></p></div></div></section></main><footer class="footer"><div class="footer-inner"><div><div class="brand">Travel<span>Discoverer</span></div><p>Flights, hotels, tours, visas, insurance, transfers, and travel support.</p></div><div><h4>Explore</h4><p><a href="flights.html">Flights</a><br><a href="hotels.html">Hotels</a><br><a href="destinations/manila.html">Manila</a></p></div><div><h4>Services</h4><p><a href="services/insurance.html">Insurance</a><br><a href="services/visa.html">Visa</a><br><a href="contact.html">Contact</a></p></div></div></footer></body></html>
